@@ -41,7 +41,7 @@
   color: rgba(197, 191, 237, 1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 830px) {
   .features__value {
     font-size: 2.68rem;
   }
@@ -199,7 +199,7 @@
   transform: translateX(3.75em);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 830px) {
   .app-promo__content {
     flex-direction: column-reverse;
     gap: 100px 0;
@@ -212,4 +212,26 @@
   .app-promo__button::after {
     transform: translateX(-13.25em) rotate(115deg);
   }
+}
+
+/* ======================================================== */
+/* ================== Our Top Restaurants ================= */
+.restaurants {
+  padding: clamp(4.375rem, 3.715rem + 2.82vw, 6.25rem) 0
+    clamp(3.75rem, 2.43rem + 5.63vw, 7.5rem);
+  background-color: var(--color-bg);
+}
+
+.restaurants__title {
+  font-family: var(--poppins-semi-bold);
+  font-size: clamp(1.875rem, 1.545rem + 1.41vw, 2.813rem);
+  line-height: 1.5;
+  color: rgba(50, 49, 66, 1);
+  margin-bottom: 1.875em;
+  text-align: center;
+}
+
+.restaurants__highlighted {
+  font-size: inherit;
+  color: var(--highlighted);
 }
