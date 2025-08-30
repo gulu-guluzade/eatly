@@ -2,20 +2,20 @@
 /* ======================= Features ======================= */
 .features {
   background-color: var(--color-primary);
-  padding: 50px 0;
+  padding: clamp(2.5rem, 2.126rem + 1.6vw, 3.563rem) 0;
 }
 
 .features__content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0 66px;
+  gap: 0 clamp(2.875rem, 2.435rem + 1.88vw, 4.125rem);
 
   text-align: center;
 }
 
 .features__items:nth-child(2) {
-  padding: 0 66px;
+  padding: 0 clamp(2.875rem, 2.435rem + 1.88vw, 4.125rem);
 
   border-left: 1px solid rgba(197, 197, 197, 0.15);
   border-right: 1px solid rgba(197, 197, 197, 0.15);
@@ -24,7 +24,7 @@
 .features__value {
   display: block;
 
-  font-size: 2.7rem;
+  font-size: clamp(1.92rem, 1.645rem + 1.17vw, 2.7rem);
   font-family: var(--public-sans-bold);
   line-height: 1.25;
 
@@ -36,63 +36,25 @@
 
 .features__description {
   font-family: var(--inter-medium);
-  font-size: 0.9rem;
+  font-size: clamp(0.64rem, 0.548rem + 0.39vw, 0.9rem);
   line-height: 1.5;
   color: rgba(197, 191, 237, 1);
 }
 
-@media (max-width: 1024px) {
-  .features {
-    padding: 35px 0;
-  }
-
-  .features__content {
-    gap: 0 47px;
-  }
-
-  .features__items:nth-child(2) {
-    padding: 0 47px;
-  }
-
-  .features__value {
-    font-size: 1.92rem;
-  }
-
-  .features__description {
-    font-size: 0.64rem;
-  }
-}
-
 @media (max-width: 768px) {
-  .features {
-    padding: 20px 0;
-  }
-
-  .features__content {
-    gap: 0 25px;
-  }
-
-  .features__items:nth-child(2) {
-    padding: 0 25px;
-  }
-
   .features__value {
-    font-size: 1.92rem;
+    font-size: 2.68rem;
   }
 
   .features__description {
-    font-size: 0.64rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .features {
-    padding: 100px 0 82px;
+    font-size: 0.9rem;
   }
 
   .features__content {
     flex-direction: column;
-    gap: 60px 0;
+    gap: clamp(2.875rem, 2.435rem + 1.88vw, 4.125rem) 0;
+
+    text-align: center;
   }
 
   .features__items:nth-child(2) {
@@ -100,14 +62,154 @@
     border-top: 1px solid rgba(197, 197, 197, 0.15);
     border-bottom: 1px solid rgba(197, 197, 197, 0.15);
 
-    padding: 60px 0;
+    padding: clamp(2.875rem, 2.435rem + 1.88vw, 4.125rem) 0;
+  }
+}
+
+/* ======================================================== */
+/* ================= Application Promotion ================ */
+.app-promo {
+  background-color: var(--color-bg);
+}
+
+.app-promo__content {
+  padding: clamp(4.125rem, 2.937rem + 5.07vw, 7.5rem) 0;
+  border-bottom: 1px solid rgba(203, 203, 203, 1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 14%;
+}
+
+/* ------------------ Image ------------------ */
+.app-promo__image-wrapper {
+  width: clamp(10.67rem, 7.737rem + 12.51vw, 19rem);
+  position: relative;
+}
+
+.app-promo__image-wrapper::after {
+  content: "";
+  display: inline-block;
+  width: clamp(1.841rem, 1.345rem + 2.12vw, 3.25rem);
+  aspect-ratio: 28/31;
+  background: url("../images/illustrations/doodle3.svg") center no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -3.284%;
+  right: -21.38%;
+}
+
+.app-promo__image {
+  max-width: 100%;
+}
+
+.app-promo__details {
+  width: clamp(20.586rem, 15.51rem + 21.66vw, 35rem);
+}
+
+/* ------------------ Title ------------------ */
+.app-promo__section-title {
+  text-transform: uppercase;
+  font-family: var(--poppins-bold);
+  line-height: 1.1429;
+
+  font-size: clamp(1.875rem, 1.415rem + 1.96vw, 3.183rem);
+
+  /* 63.06px / 50.92px = 1.2384em */
+  margin-bottom: 1.2384em;
+}
+
+.app-promo__highlighted {
+  color: var(--highlighted);
+  font-size: inherit;
+}
+
+/* ------------------ Features ------------------ */
+.app-promo__feature {
+  font-family: var(--inter-regular);
+  font-size: clamp(0.748rem, 0.563rem + 0.79vw, 1.271rem);
+  line-height: 1.5;
+  color: rgba(103, 103, 103, 1);
+
+  list-style-type: disc;
+
+  transform: translateX(5.2%);
+}
+
+.app-promo__feature::marker {
+  color: inherit;
+}
+
+.app-promo__feature:nth-child(2) {
+  margin: 1.35em 0 1.6em;
+}
+
+/* ------------------ Button -------------------- */
+.app-promo__button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.app-promo__button {
+  /* 1.125 * 16 = 18 */
+  font-size: clamp(0.739rem, 0.601rem + 0.59vw, 1.129rem);
+
+  /* 20 / 18 = 1.1111 */
+  /* 26 / 18 = 1.4444*/
+  padding: 1.1111em 1.4444em;
+
+  font-family: var(--poppins-medium);
+  color: rgba(255, 255, 255, 1);
+
+  background-color: var(--color-primary);
+  border: 1px solid transparent;
+  border-radius: 0.83333em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 15px / 18 = 0.8333em */
+  gap: 0 0.8333em;
+
+  transition-property: background-color, border-radius, color;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+
+  position: relative;
+}
+
+.app-promo__button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.app-promo__button::after {
+  content: "";
+  width: clamp(6.321rem, 4.828rem + 6.37vw, 10.562rem);
+  aspect-ratio: 169/61;
+  background: url("../images/arrows/spiral-arrow2.svg") center no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(3.75em);
+}
+
+@media (max-width: 768px) {
+  .app-promo__content {
+    flex-direction: column-reverse;
+    gap: 100px 0;
   }
 
-  .features__value {
-    font-size: 2.7rem;
+  .app-promo__button-wrapper {
+    justify-content: center;
   }
 
-  .features__description {
-    font-size: 0.9rem;
+  .app-promo__button::after {
+    transform: translateX(-13.25em) rotate(115deg);
   }
 }
